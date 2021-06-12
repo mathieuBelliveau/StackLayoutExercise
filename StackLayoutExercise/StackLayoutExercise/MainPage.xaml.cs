@@ -57,6 +57,13 @@ namespace StackLayoutExercise
                 tip.Text = tipp.ToString("C");
                 total.Text = totall.ToString("C");
             }
+
+            TipCalculated?.Invoke(this, EventArgs.Empty);
+
         }
+
+        public event EventHandler TipCalculated;
+
+
     }
 }
