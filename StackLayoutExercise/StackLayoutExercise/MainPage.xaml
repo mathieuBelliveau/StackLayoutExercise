@@ -3,18 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StackLayoutExercise.MainPage">
 
-    <StackLayout>
-        <Label HorizontalOptions="Start" Text="Bill"/>
-        <Entry x:Name="input" HorizontalOptions="Start" BackgroundColor="AliceBlue" />
-        <Label x:Name="Tip" Text="Tip $0.00" />
-        <Label x:Name="Total" Text="Total $0.00"/>
-        <Label Text="Tip Percentage" />
-        <Label x:Name="percent" Text="$0.00"/>
-        <Slider Value="15" MaximumTrackColor="Red" MinimumTrackColor="Green"/>
-        <Button Text="15%" TextColor="Cyan"/>
-        <Button Text="20%" TextColor="Cyan"/>
-        <RadioButton x:Name="down" />
-        <RadioButton x:Name="up" />
+    <StackLayout Padding="20">
+        <StackLayout Orientation="Horizontal">
+            <Label HorizontalOptions="Start" Text="Bill"  VerticalOptions="Center"/>
+            <Entry x:Name="input" Placeholder="Enter Amount" Keyboard="Numeric"  />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+            <Label Text="Tip" />
+            <Label x:Name="tip" Text="$0.00" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Total" />
+            <Label x:Name="total" Text="$0.00" />
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand">
+            <Label Text="Tip Percentage" />
+            <Label x:Name="percent" Text="0%"/>
+        </StackLayout>
+        
+        
+        <Slider x:Name="slide" Value="15" MaximumTrackColor="Red" MinimumTrackColor="Green"
+                VerticalOptions="End" Maximum="100" Minimum="0"/>
+        <Button x:Name ="fif" Text="15%" TextColor="Cyan" VerticalOptions="End"/>
+        <Button x:Name="twen" Text="20%" TextColor="Cyan" VerticalOptions="End"/>
+
+
+        <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center">
+            <Label Text="RoundUp" />
+            <RadioButton x:Name="down" />
+            <Label Text="RoundDown" />
+            <RadioButton x:Name="up" />
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>
